@@ -15,7 +15,8 @@ const projects = [
     description: "Real-time collaborative code editor with syntax highlighting and live preview functionality",
     tags: ["React", "Node.js", "WebSockets"],
     github: "https://github.com/rc-exe/online-code-editor",
-    demo: "https://online-code-editor-a9zz.onrender.com/"
+    demo: "https://online-code-editor-a9zz.onrender.com/",
+    website: "https://online-code-editor-a9zz.onrender.com/"
   },
   {
     title: "Face Expression Recognition",
@@ -102,7 +103,17 @@ function Projects() {
                     <FaGithub className="mr-2" />
                     Code
                   </a>
-                  {project.demo !== "#" && (
+                  {project.website ? (
+                    <a
+                      href={project.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg hover:opacity-90 transition"
+                    >
+                      <FaExternalLinkAlt className="mr-2" />
+                      View Website
+                    </a>
+                  ) : project.demo !== "#" ? (
                     <a
                       href={project.demo}
                       target="_blank"
@@ -112,7 +123,7 @@ function Projects() {
                       <FaExternalLinkAlt className="mr-2" />
                       Live Demo
                     </a>
-                  )}
+                  ) : null}
                 </div>
               </div>
             </motion.div>
