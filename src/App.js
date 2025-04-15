@@ -19,7 +19,7 @@ function App() {
     },
     { 
       name: "Online Code Editor", 
-      link: "https://github.com/rc-exe/online_code_editor",
+      link: "https://online-code-editor-a9zz.onrender.com/",
       description: "Real-time collaborative code editor with syntax highlighting and live preview functionality",
       tags: ["React", "Node.js", "WebSockets"]
     },
