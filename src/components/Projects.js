@@ -14,7 +14,8 @@ const projects = [
     title: "Online Code Editor",
     description: "Real-time collaborative code editor with syntax highlighting and live preview functionality",
     tags: ["React", "Node.js", "WebSockets"],
-    github: "https://online-code-editor-a9zz.onrender.com/",
+    github: "https://github.com/rc-exe/online-code-editor",
+    demo: "https://online-code-editor-a9zz.onrender.com/"
   },
   {
     title: "Face Expression Recognition",
