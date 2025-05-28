@@ -18,7 +18,7 @@ function App() {
   
   
   const projects = [
-    { 
+     { 
       name: "Resume Scanner", 
       link: "https://resume-ats-scorer.netlify.app/",
       description: "ATS-compatible resume parser with scoring system that analyzes and ranks resumes based on job descriptions",
@@ -215,73 +215,113 @@ function App() {
 </section>
 
         {/* About Section */}
-        <section id="about" className="py-20 px-6 max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true, margin: "-100px" }}
-          >
-            <h2 className="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+<section id="about" className="py-24 px-6 max-w-7xl mx-auto">
+  <motion.div
+    initial={{ opacity: 0, y: 50 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.9 }}
+    viewport={{ once: true }}
+  >
+    {/* Section Title */}
+    <h2 className="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
               About Me
             </h2>
-            
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div className="space-y-6">
-                <p className="text-lg leading-relaxed">
-                  I'm a passionate <strong className="text-blue-600 dark:text-blue-400">Full-Stack Developer</strong> with expertise in building modern web applications using <strong>React.js, Python, and Flask</strong>.
-                </p>
-                <p className="text-lg leading-relaxed">
-                  My journey in tech began with a fascination for problem-solving, which led me to explore everything from frontend design to backend architecture and machine learning implementations.
-                </p>
-                <p className="text-lg leading-relaxed">
-                  When I'm not coding, you can find me contributing to open-source projects, learning new technologies, or sharing knowledge with the developer community.
-                </p>
-                
-                <div className="pt-4">
-                  <a
-                    href="#contact"
-                    className="inline-flex items-center px-5 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-medium hover:opacity-90 transition"
-                  >
-                    <FiMail className="mr-2" />
-                    Get In Touch
-                  </a>
-                </div>
+
+    <div className="grid md:grid-cols-2 gap-16 items-center">
+      {/* Left Content */}
+      <div className="space-y-6">
+        <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+          I'm a <span className="text-blue-600 dark:text-blue-400 font-semibold">Full-Stack Developer</span> passionate about crafting scalable web apps using <strong>React.js</strong>, <strong>Python</strong>, and <strong>Flask</strong>.
+        </p>
+        <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+          My journey began with a love for solving problems and evolved into full-stack development and machine learning. I enjoy building elegant user interfaces and robust APIs.
+        </p>
+        <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+          Outside coding, I contribute to open-source, mentor developers, and explore the latest tech trends.
+        </p>
+
+        <div className="pt-6">
+          <a href="#contact">
+            <motion.button
+  className="relative px-8 py-3.5 bg-gradient-to-r from-blue-600 via-blue-500 to-purple-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group overflow-hidden"
+  whileHover={{ 
+    y: -2,
+    scale: 1.02,
+    boxShadow: "0 10px 25px -5px rgba(99, 102, 241, 0.3)"
+  }}
+  whileTap={{ 
+    scale: 0.98,
+    boxShadow: "0 2px 10px -3px rgba(99, 102, 241, 0.5)"
+  }}
+  transition={{
+    type: "spring",
+    stiffness: 400,
+    damping: 15
+  }}
+>
+  {/* Animated gradient background */}
+  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+    <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 animate-gradient-x"></div>
+  </div>
+  
+  {/* Button content */}
+  <span className="relative z-10 flex items-center justify-center gap-2">
+    <span>Get In Touch</span>
+    <svg 
+      className="w-4 h-4 transition-transform group-hover:translate-x-1"
+      fill="none" 
+      stroke="currentColor" 
+      viewBox="0 0 24 24"
+    >
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+    </svg>
+  </span>
+  
+  {/* Ripple effect (requires JS) */}
+  <span className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+    <span className="absolute top-0 left-0 w-full h-full bg-white/10"></span>
+  </span>
+</motion.button>
+          </a>
+        </div>
+      </div>
+
+      {/* Right Content */}
+      <div className="relative">
+        {/* Glowing Card */}
+        <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-500 to-purple-600 opacity-60 blur-md -z-10"></div>
+
+        <div className="bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-2xl border border-gray-200 dark:border-gray-700">
+          {/* Tech Stack */}
+          <div className="grid grid-cols-3 gap-4 mb-6">
+            {['React', 'Python', 'Flask', 'ML', 'Java', 'SQL'].map((tech) => (
+              <div key={tech} className="text-sm text-center py-2 px-3 rounded-xl bg-gray-100 dark:bg-gray-800 shadow-inner font-medium hover:scale-105 transition">
+                {tech}
               </div>
-              
-              <div className="relative">
-                <div className="bg-gradient-to-br from-blue-500 to-purple-600 p-1 rounded-2xl shadow-xl">
-                  <div className="bg-white dark:bg-gray-800 rounded-xl p-4">
-                    <div className="grid grid-cols-3 gap-2">
-                      {['React', 'Python', 'Flask', 'ML', 'Java', 'SQL'].map((tech) => (
-                        <div key={tech} className="bg-gray-100 dark:bg-gray-700 rounded-lg p-3 text-center">
-                          <span className="font-medium">{tech}</span>
-                        </div>
-                      ))}
-                    </div>
-                    <div className="mt-4 p-4 bg-gray-100 dark:bg-gray-700 rounded-lg">
-                      <div className="flex items-center">
-                        <div className="w-3 h-3 rounded-full bg-red-500 mr-2"></div>
-                        <div className="w-3 h-3 rounded-full bg-yellow-500 mr-2"></div>
-                        <div className="w-3 h-3 rounded-full bg-green-500 mr-4"></div>
-                        <div className="text-sm font-mono text-gray-600 dark:text-gray-300">about_me.js</div>
-                      </div>
-                      <div className="mt-3 font-mono text-sm">
-                        <span className="text-purple-600 dark:text-purple-400">const</span> <span className="text-blue-600 dark:text-blue-400">developer</span> = {'{'}
-                        <div className="ml-4">
-                          <div><span className="text-green-600 dark:text-green-400">name</span>: <span className="text-yellow-600 dark:text-yellow-400">'Ritesh Chakramani'</span>,</div>
-                          <div><span className="text-green-600 dark:text-green-400">role</span>: <span className="text-yellow-600 dark:text-yellow-400">'Full-Stack Developer'</span>,</div>
-                          <div><span className="text-green-600 dark:text-green-400">passion</span>: <span className="text-yellow-600 dark:text-yellow-400">'Building innovative solutions'</span></div>
-                        </div>
-                        {'}'}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            ))}
+          </div>
+
+          {/* Code Block */}
+          <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-5 font-mono text-sm text-gray-800 dark:text-gray-100 shadow-inner">
+            <div className="flex items-center mb-3">
+              <span className="w-3 h-3 bg-red-500 rounded-full mr-2"></span>
+              <span className="w-3 h-3 bg-yellow-500 rounded-full mr-2"></span>
+              <span className="w-3 h-3 bg-green-500 rounded-full mr-4"></span>
+              <span className="text-xs text-gray-600 dark:text-gray-400">about_me.js</span>
             </div>
-          </motion.div>
-        </section>
+            <pre>
+{`const developer = {
+  name: 'Ritesh Chakramani',
+  role: 'Full-Stack Developer',
+  passion: 'Building innovative solutions'
+};`}
+            </pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </motion.div>
+</section>
 
         {/* Skills Section */}
 <section id="skills" className="py-20 px-6 ">
