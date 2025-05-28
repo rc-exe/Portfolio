@@ -307,15 +307,17 @@ function App() {
               <span className="w-3 h-3 bg-red-500 rounded-full mr-2"></span>
               <span className="w-3 h-3 bg-yellow-500 rounded-full mr-2"></span>
               <span className="w-3 h-3 bg-green-500 rounded-full mr-4"></span>
-              <span className="text-xs text-gray-600 dark:text-gray-400">about_me.js</span>
-            </div>
-            <pre>
-{`const developer = {
-  name: 'Ritesh Chakramani',
-  role: 'Full-Stack Developer',
-  passion: 'Building innovative solutions'
-};`}
-            </pre>
+                <span className="text-xs text-gray-600 dark:text-gray-400">about_me.js</span>
+</div>
+<pre className="bg-gray-600 dark:bg-gray-900 text-white p-4 rounded-lg overflow-x-auto text-sm font-mono">
+  <code>
+    <span className="text-yellow-400">const</span> <span className="text-blue-400">developer</span> <span className="text-white">= </span>&#123;{"\n"}
+    &nbsp;&nbsp;<span className="text-green-400">name</span>: <span className="text-pink-400">'Ritesh Chakramani'</span>,{"\n"}
+    &nbsp;&nbsp;<span className="text-green-400">role</span>: <span className="text-pink-400">'Full-Stack Developer'</span>,{"\n"}
+    &nbsp;&nbsp;<span className="text-green-400">passion</span>: <span className="text-pink-400">'Building innovative solutions'</span>{"\n"}
+    &#125;;
+  </code>
+</pre>
           </div>
         </div>
       </div>
