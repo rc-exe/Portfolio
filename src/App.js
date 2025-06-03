@@ -729,11 +729,11 @@ function App() {
       <div className="text-left">
         <h4 className="font-medium">Email</h4>
         <a 
-          href="mailto:riteshchakramani123@gmail.com" 
-          className="text-blue-500 hover:underline"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+  href="https://mail.google.com/mail/?view=cm&fs=1&to=riteshchakramani123@gmail.com" 
+  className="text-blue-500 hover:underline"
+  target="_blank"
+  rel="noopener noreferrer"
+>
           riteshchakramani123@gmail.com
         </a>
       </div>
