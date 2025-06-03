@@ -1,15 +1,18 @@
-import {React,} from "react";
+import React, { useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { FaGithub, FaLinkedin, FaCode, FaFilePdf, FaInstagram,FaGlobe   } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaCode, FaFilePdf, FaInstagram, FaGlobe } from "react-icons/fa";
 import { FiMail, FiExternalLink } from "react-icons/fi";
 import background from "./assets/background.jpg";
 import WeatherWidget from './components/WeatherWidget';
-import ScrollIndicator from "./components/ScrollIndicator"; // adjust the path if needed
-import Time from './components/Time'; // Adjust the path if needed
+import ScrollIndicator from "./components/ScrollIndicator";
+import Time from './components/Time';
 import './index.css';
 import Sidebar from "./components/Sidebar";
+import Intro from "./components/Intro";
 
 function App() {
+    const [showIntro, setShowIntro] = useState(true);
+
   const { scrollY } = useScroll();
   const backgroundY = useTransform(scrollY, [0, 500], [0, -200]);
   const opacity = useTransform(scrollY, [0, 100], [1, 0.7]);
@@ -96,6 +99,14 @@ function App() {
 
   return (
     
+     <>
+       {showIntro ? (
+        <Intro
+          onComplete={() => {
+            setShowIntro(false);
+          }}
+        />
+      ) : (
 <div className="relative min-h-screen bg-stone-50 dark:bg-gray-950 text-gray-800 dark:text-stone-200 overflow-x-hidden flex"><div className="flex justify-end mb-8">
   
       <Sidebar />
@@ -106,7 +117,6 @@ function App() {
   </main>
     </div>
     
-
 
 
       {/* Main Content */}
@@ -294,7 +304,7 @@ function App() {
         <div className="bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-2xl border border-gray-200 dark:border-gray-700">
           {/* Tech Stack */}
           <div className="grid grid-cols-3 gap-4 mb-6">
-            {['React', 'Python', 'Flask', 'ML', 'Java', 'SQL'].map((tech) => (
+            {[].map((tech) => (
               <div key={tech} className="text-sm text-center py-2 px-3 rounded-xl bg-gray-100 dark:bg-gray-800 shadow-inner font-medium hover:scale-105 transition">
                 {tech}
               </div>
@@ -811,6 +821,8 @@ function App() {
         </footer>
       </div>
     </div>
+  )}
+  </>
   );
 }
 
