@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { FaGithub, FaLinkedin, FaCode, FaFilePdf, FaInstagram, FaGlobe } from "react-icons/fa";
 import { FiMail, FiExternalLink } from "react-icons/fi";
@@ -9,15 +9,21 @@ import Time from './components/Time';
 import './index.css';
 import Sidebar from "./components/Sidebar";
 import Intro from "./components/Intro";
+import { initSmoothScroll } from "./utils/SmoothScroll"; // adjust path if needed
 
 function App() {
     const [showIntro, setShowIntro] = useState(true);
 
-  const { scrollY } = useScroll();
-  const backgroundY = useTransform(scrollY, [0, 500], [0, -200]);
-  const opacity = useTransform(scrollY, [0, 100], [1, 0.7]);
-  const root = document.documentElement;
-   root.classList.add("theme-transition");
+    useEffect(() => {
+        initSmoothScroll();
+    }, []);
+
+    const { scrollY } = useScroll();
+    const backgroundY = useTransform(scrollY, [0, 500], [0, -200]);
+    const opacity = useTransform(scrollY, [0, 100], [1, 0.7]);
+
+    const root = document.documentElement;
+    root.classList.add("theme-transition");
   
   
   const projects = [
@@ -728,7 +734,7 @@ function App() {
       </div>
       <div className="text-left">
         <h4 className="font-medium">Email</h4>
-        <a 
+       <a 
   href="https://mail.google.com/mail/?view=cm&fs=1&to=riteshchakramani123@gmail.com" 
   className="text-blue-500 hover:underline"
   target="_blank"
