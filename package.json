@@ -3,11 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@studio-freight/lenis": "^1.0.42",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.2.0",
     "@testing-library/user-event": "^13.5.0",
     "framer-motion": "^12.4.10",
+    "locomotive-scroll": "^4.1.4",
     "lottie-react": "^2.4.1",
     "lucide-react": "^0.477.0",
     "react": "^19.0.0",
