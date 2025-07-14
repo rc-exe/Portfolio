@@ -750,83 +750,78 @@ function App() {
 </div>
 
 
-        {/* Social Media Card - Enhanced Uiverse.io Design */}
-        <div className="card relative h-full min-h-[50px] overflow-hidden rounded-xl shadow-md">
-          <div className="background absolute inset-0 bg-gradient-to-br from-purple-600 to-blue-500 opacity-90 dark:from-purple-900 dark:to-blue-800"></div>
-          
-          <div className="logo absolute top-6 left-0 right-0 text-center text-2xl font-bold text-white">
-            Socials
-          </div>
+       <div className="flex flex-row items-center justify-center gap-6 mt-0 md:mt-[45px]">
+  <a 
+    href="https://www.instagram.com/_ritesh_rc_/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="group relative w-14 h-14 flex items-center justify-center rounded-xl bg-black/5 dark:bg-white/10 backdrop-blur-md transition-all duration-300 hover:shadow-[0_0_20px_4px_rgba(0,0,0,0.1)] dark:hover:shadow-[0_0_20px_4px_rgba(255,255,255,0.2)] hover:scale-105"
+  >
+    <FaInstagram className="text-neutral-800 dark:text-white text-2xl transition-transform duration-300 group-hover:scale-110" />
+    <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-sm text-neutral-800 dark:text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      Instagram
+    </span>
+  </a>
 
-          <div className="absolute inset-0 flex flex-col items-center justify-center gap-6 p-6">
-          <a 
-              href="https://www.instagram.com/_ritesh_rc_/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="box box1 w-16 h-16 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center transition-all duration-300 hover:bg-white/20 hover:scale-110"
-            >
-              <span className="icon text-white">
-                <FaInstagram className="text-2xl" />
-              </span>
-            </a>
-            
+  <a 
+    href="https://www.linkedin.com/in/ritesh-chakramani-016a0b235"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="group relative w-14 h-14 flex items-center justify-center rounded-xl bg-black/5 dark:bg-white/10 backdrop-blur-md transition-all duration-300 hover:shadow-[0_0_20px_4px_rgba(0,0,0,0.1)] dark:hover:shadow-[0_0_20px_4px_rgba(255,255,255,0.2)] hover:scale-105"
+  >
+    <FaLinkedin className="text-neutral-800 dark:text-white text-2xl transition-transform duration-300 group-hover:scale-110" />
+    <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-sm text-neutral-800 dark:text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      LinkedIn
+    </span>
+  </a>
 
-            <a 
-              href="https://www.linkedin.com/in/ritesh-chakramani-016a0b235" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="box box2 w-16 h-16 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center transition-all duration-300 hover:bg-white/20 hover:scale-110"
-            >
-              <span className="icon text-white">
-                <FaLinkedin className="text-2xl" />
-              </span>
-            </a>
-            <a 
-              href="https://github.com/rc-exe" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="box box3 w-16 h-16 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center transition-all duration-300 hover:bg-white/20 hover:scale-110"
-            >
-              <span className="icon text-white">
-                <FaGithub className="text-2xl" />
-              </span>
-            </a>
-           
-          </div>
-        </div>
+  <a 
+    href="https://github.com/rc-exe"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="group relative w-14 h-14 flex items-center justify-center rounded-xl bg-black/5 dark:bg-white/10 backdrop-blur-md transition-all duration-300 hover:shadow-[0_0_20px_4px_rgba(0,0,0,0.1)] dark:hover:shadow-[0_0_20px_4px_rgba(255,255,255,0.2)] hover:scale-105"
+  >
+    <FaGithub className="text-neutral-800 dark:text-white text-2xl transition-transform duration-300 group-hover:scale-110" />
+    <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-sm text-neutral-800 dark:text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      GitHub
+    </span>
+  </a>
+</div>
+
       </div>
     </motion.div>
   </div>
 </section>
 
 
+
         {/* Footer */}
-        <footer className="py-8 border-t border-gray-200 dark:border-gray-700">
-          <div className="max-w-6xl mx-auto px-6">
-            <div className="flex flex-col md:flex-row justify-between items-center">
-              <div className="mb-4 md:mb-0">
-                <h3 className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                  Ritesh Chakramani
-                </h3>
-                <p className="text-gray-600 dark:text-gray-400">Full-Stack Developer</p>
-              </div>
-              
-              <div className="flex space-x-6">
-                {['about', 'skills', 'projects', 'certifications', 'resume', 'contact'].map((item) => (
-                  <a 
-                    key={item} 
-                    href={`#${item}`} 
-                    className="text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition"
-                  >
-                    {item.charAt(0).toUpperCase() + item.slice(1)}
-                  </a>
-                ))}
-              </div>
-            </div>
-            
-           
-          </div>
-        </footer>
+        <footer className="py-8 border-t border-gray-200 dark:border-gray-700 relative">
+  <div className="max-w-6xl mx-auto px-6">
+    <div className="flex flex-col md:flex-row justify-between items-center">
+      <div className="mb-4 md:mb-0">
+        <h3 className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+          Ritesh Chakramani
+        </h3>
+        <p className="text-gray-600 dark:text-gray-400">Full-Stack Developer</p>
+      </div>
+      
+     
+    </div>
+  </div>
+
+  {/* Go to Top Button */}
+  <button
+    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+    aria-label="Scroll to top"
+    className="absolute right-6 bottom-6 flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 15l7-7 7 7" />
+    </svg>
+  </button>
+</footer>
+
       </div>
     </div>
   )}
