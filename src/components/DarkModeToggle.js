@@ -3,14 +3,8 @@ import { Moon, Sun } from "lucide-react";
 import { motion } from "framer-motion";
 
 const DarkModeToggle = ({ onToggle }) => {
-  const [darkMode, setDarkMode] = useState(() => {
-    if (typeof window !== "undefined") {
-      const savedTheme = localStorage.getItem("theme");
-      if (savedTheme) return savedTheme === "dark";
-      return window.matchMedia("(prefers-color-scheme: dark)").matches;
-    }
-    return false;
-  });
+  // Always default to light mode
+  const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
     const root = document.documentElement;

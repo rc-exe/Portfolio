@@ -12,18 +12,20 @@ import Intro from "./components/Intro";
 import { initSmoothScroll } from "./utils/SmoothScroll"; // adjust path if needed
 
 function App() {
-    const [showIntro, setShowIntro] = useState(true);
+  const [showIntro, setShowIntro] = useState(true);
 
-    useEffect(() => {
-        initSmoothScroll();
-    }, []);
+  useEffect(() => {
+    initSmoothScroll();
+  }, []);
 
-    const { scrollY } = useScroll();
-    const backgroundY = useTransform(scrollY, [0, 500], [0, -200]);
-    const opacity = useTransform(scrollY, [0, 100], [1, 0.7]);
+  const { scrollY } = useScroll();
+  const backgroundY = useTransform(scrollY, [0, 500], [0, -200]);
+  const opacity = useTransform(scrollY, [0, 100], [1, 0.7]);
 
-    const root = document.documentElement;
-    root.classList.add("theme-transition");
+  const root = document.documentElement;
+  root.classList.add("theme-transition");
+
+  
   
   
   const projects = [
@@ -102,42 +104,34 @@ function App() {
       badge: "/badges/react.png" // Path in public/badges/
     }
   ];
+return (
+  <>
+    {showIntro ? (
+      <Intro onComplete={() => setShowIntro(false)} />
+    ) : (
+      <div className="relative min-h-screen bg-stone-50 dark:bg-gray-950 text-gray-800 dark:text-stone-200 overflow-x-hidden flex">
+        <div className="flex justify-end mb-8">
+          <Sidebar />
+          <main className="w-full">
+            {/* Sections */}
+            <section className="flex items-center justify-center min-h-screen"></section>
+            <section className="flex items-center justify-center min-h-screen"></section>
+          </main>
+        </div>
 
-  return (
-    
-     <>
-       {showIntro ? (
-        <Intro
-          onComplete={() => {
-            setShowIntro(false);
-          }}
-        />
-      ) : (
-<div className="relative min-h-screen bg-stone-50 dark:bg-gray-950 text-gray-800 dark:text-stone-200 overflow-x-hidden flex"><div className="flex justify-end mb-8">
-  
-      <Sidebar />
-      <main className="w-full">
-    {/* Sections */}
-    <section className="flex items-center justify-center min-h-screen"></section>
-    <section className="flex items-center justify-center min-h-screen"></section>
-  </main>
-    </div>
-    
-
-
-      {/* Main Content */}
-      <div className="w-full">
-        {/* Animated Background */}
-        <motion.div
-          className="fixed top-0 left-0 w-full h-full bg-cover bg-center z-[-1]"
-          style={{
-            backgroundImage: `url(${background})`,
-            backgroundSize: "cover",
-            backgroundAttachment: "fixed",
-            y: backgroundY,
-            opacity
-          }}
-        />
+        {/* Main Content */}
+        <div className="w-full">
+          {/* Animated Background */}
+          <motion.div
+            className="fixed top-0 left-0 w-full h-full bg-cover bg-center z-[-1]"
+            style={{
+              backgroundImage: `url(${background})`,
+              backgroundSize: "cover",
+              backgroundAttachment: "fixed",
+              y: backgroundY,
+              opacity
+            }}
+          />
 
 {/* Hero Section */}
 <section id="hero" className="min-h-screen flex flex-col justify-center items-center text-center px-6 relative overflow-hidden">

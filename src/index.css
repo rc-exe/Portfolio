@@ -7,6 +7,11 @@ html {
 body {
   font-family: 'Courier New', Courier, monospace;
 }
+html, body, #root {
+  background-color: #0f2031;
+  margin: 0;
+  height: 100%;
+}
 
 ::-webkit-scrollbar {
   width: 14px;
