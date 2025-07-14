@@ -4,6 +4,9 @@
 html {
   scroll-behavior: smooth;
 }
+body {
+  font-family: 'Courier New', Courier, monospace;
+}
 
 ::-webkit-scrollbar {
   width: 14px;
