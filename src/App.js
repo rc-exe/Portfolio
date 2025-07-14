@@ -435,67 +435,77 @@ function App() {
 
         {/* Projects Section */}
         <section id="projects" className="py-20 px-6 max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true, margin: "-100px" }}
-          >
-            <h2 className="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent pb-[4px]">
-            Projects
-            </h2>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {projects.map((project, index) => (
-                <motion.div
-                  key={project.name}
-                  className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.0, delay: index * 0.0 }}
-                  viewport={{ once: true }}
-                  whileHover={{ y: -10 }}
-                >
-                  <div className="p-6">
-                    <div className="flex justify-between items-start mb-4">
-                      <h3 className="text-xl font-bold text-gray-800 dark:text-white">{project.name}</h3>
-                      <a 
-                        href={project.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-gray-500 hover:text-blue-500 transition"
-                      >
-                        <FiExternalLink />
-                      </a>
-                    </div>
-                    <p className="text-gray-600 dark:text-gray-300 mb-4">{project.description}</p>
-                    
-                    <div className="flex flex-wrap gap-2 mb-6">
-                      {project.tags.map(tag => (
-                        <span 
-                          key={tag} 
-                          className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-sm rounded-full text-gray-800 dark:text-gray-200"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
+  <motion.div
+    initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1 }}
+    transition={{ duration: 0.8 }}
+    viewport={{ once: true, margin: "-100px" }}
+  >
+    <h2 className="text-4xl font-bold mb-16 text-center bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+      Projects
+    </h2>
 
-                    <div className="flex space-x-4">
-                      <a
-                        href={project.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition"
-                      >
-                        <FaGithub className="mr-2" />
-                        View Code
-                      </a>
-                    </div>
-                  </div>
-                </motion.div>
+    <div className="space-y-12">
+      {projects.map((project, index) => (
+        <motion.div
+          key={project.name}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -30 }}
+          transition={{ duration: 0.6, delay: index * 0.1 }}
+          viewport={{ amount: 0.3 }}
+          className="group flex flex-col md:flex-row items-start gap-6"
+        >
+          {/* Project Number */}
+          <div className="text-5xl font-black text-gray-200 dark:text-gray-700 group-hover:text-blue-500 transition-all">
+            {String(index + 1).padStart(2, '0')}
+          </div>
+
+          {/* Card */}
+          <div className="flex-1 bg-white dark:bg-white/5 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-6 border border-gray-200 dark:border-gray-700">
+            <div className="flex justify-between items-center mb-3">
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
+                {project.name}
+              </h3>
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-blue-500 transition"
+              >
+                <FiExternalLink size={20} />
+              </a>
+            </div>
+
+            <p className="text-gray-600 dark:text-gray-300 mb-4 text-sm leading-relaxed">
+              {project.description}
+            </p>
+
+            <div className="flex flex-wrap gap-2 mb-4">
+              {project.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="text-xs bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-2 py-1 rounded-full"
+                >
+                  {tag}
+                </span>
               ))}
             </div>
+
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center text-sm text-blue-600 dark:text-blue-400 hover:underline"
+            >
+              <FaGithub className="mr-2" />
+              View Code
+            </a>
+          </div>
+        </motion.div>
+      ))}
+    </div>
+
 
             <motion.div
               initial={{ opacity: 0 }}
