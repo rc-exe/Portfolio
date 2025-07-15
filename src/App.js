@@ -572,7 +572,7 @@ return (
 
 
 
-        {/* Resume Section */}
+     {/* Resume Section */}
 <section id="resume" className="py-20 px-6 max-w-6xl mx-auto">
   <motion.div
     initial={{ opacity: 0 }}
@@ -594,7 +594,7 @@ return (
 
           <div className="mb-8">
             <h4 className="text-xl font-semibold mb-4 border-b border-blue-400 pb-2">Contact</h4>
-            <ul className="space-y-3">
+            <ul className="space-y-3 text-sm break-all">
               <li className="flex items-center">
                 <FiMail className="mr-3" />
                 riteshchakramani123@gmail.com
@@ -605,7 +605,7 @@ return (
               </li>
               <li className="flex items-center">
                 <FaLinkedin className="mr-3" />
-                linkedin.com/in/ritesh-chakramani
+                linkedin.com/in/ritesh-chakramani-016a0b235
               </li>
               <li className="flex items-center">
                 <FaInstagram className="mr-3" />
@@ -622,10 +622,18 @@ return (
             <h4 className="text-xl font-semibold mb-4 border-b border-blue-400 pb-2">Skills</h4>
             <ul className="space-y-2 text-sm">
               <li>Java, Python, C++, C, SQL</li>
-              <li>HTML, CSS, JavaScript, PHP</li>
+              <li>HTML, CSS, JavaScript, PHP, ReactJS</li>
               <li>MySQL, SQL Query Optimization</li>
               <li>Arduino IDE, VS Code, Cygwin</li>
-              <li>IoT Integration, Web Designing</li>
+              <li>Software Dev, Debugging, IoT Integration</li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-xl font-semibold mb-4 border-b border-blue-400 pb-2">Soft Skills</h4>
+            <ul className="space-y-1 text-sm">
+              <li>Communication, Leadership, Time Mgmt</li>
+              <li>Quick Learner, Adaptive, Team Worker</li>
             </ul>
           </div>
         </div>
@@ -633,68 +641,64 @@ return (
         <div className="md:w-2/3 p-8">
           <div className="mb-8">
             <h4 className="text-xl font-semibold mb-4 border-b border-gray-200 dark:border-gray-700 pb-2">
-              Professional Summary
+              Summary
             </h4>
-            <p className="text-gray-600 dark:text-gray-300">
-              Enthusiastic and detail-oriented software developer with expertise in Python, SQL, Java, and web technologies.
-              Experienced in IoT applications, database management, and web development. Passionate about solving problems
-              and creating efficient, scalable solutions.
+            <p className="text-gray-600 dark:text-gray-300 text-sm">
+              Detail-oriented software developer skilled in Python, SQL, Java, and web technologies. Experienced in IoT apps, database optimization, and frontend/backend development. Passionate about scalable solutions and problem-solving.
             </p>
           </div>
 
           <div className="mb-8">
-            <h4 className="text-xl font-semibold mb-4 border-b border-gray-200 dark:border-gray-700 pb-2">
-              Education
-            </h4>
-            <ul className="space-y-2">
+            <h4 className="text-xl font-semibold mb-4 border-b border-gray-200 dark:border-gray-700 pb-2">Experience</h4>
+            <p className="font-medium">Software Developer Intern – Triwits Technologies</p>
+            <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">May 2024 – Oct 2024, Bijapur, Karnataka</p>
+            <ul className="list-disc list-inside space-y-1 text-sm text-gray-700 dark:text-gray-300">
+              <li>Worked on Python/JavaScript/SQL-based web & desktop tools</li>
+              <li>Participated in agile sprints, code reviews, and debugging</li>
+              <li>Hands-on experience with version control & deployments</li>
+              <li>Collaborated on scalable client-focused software modules</li>
+            </ul>
+          </div>
+
+          <div className="mb-8">
+            <h4 className="text-xl font-semibold mb-4 border-b border-gray-200 dark:border-gray-700 pb-2">Education</h4>
+            <ul className="space-y-2 text-sm">
+              <li><strong>MCA</strong> – Rani Channamma University, Belagavi (2023–2024) – CGPA: 7.63 | SGPA: 9.5</li>
+              <li><strong>BCA</strong> – CES Chetana BCA College, Vijayapura (2019–2022) – 74%</li>
+            </ul>
+          </div>
+
+          <div className="mb-8">
+            <h4 className="text-xl font-semibold mb-4 border-b border-gray-200 dark:border-gray-700 pb-2">Project Experience</h4>
+            <ul className="space-y-4 text-sm text-gray-700 dark:text-gray-300">
               <li>
-                <strong>MCA</strong>, Rani Channamma University, Belagavi (2023-2024) – CGPA: 7.63 | SGPA: 9.5
+                <strong>Keylogger & Security Monitoring Tool</strong><br />
+                Built with Python, Flask, HTML/CSS, JS. Captures keystrokes, screenshots, web usage. Stealth mode design.
               </li>
               <li>
-                <strong>BCA</strong>, CES Chetana BCA College, Vijayapura (2019–2022) – 75%
+                <strong>AI-Powered Speech-to-Text Web App</strong><br />
+                Uses OpenAI Whisper + Flask. Live transcription, dark/light UI, and voice activity detection.
               </li>
               <li>
-                <strong>PUC</strong>, Sri N.B. Patil PU Science College (2018–2019)
+                <strong>IoT Weather Monitoring System</strong><br />
+                ESP8266 + sensors + Blynk. Real-time alerts, analytics, 364/400 marks (SGPA 9.36).
+              </li>
+              <li>
+                <strong>Advocate Management System</strong><br />
+                Appointment system for clients/lawyers. Earned 296/300 in academic evaluation.
               </li>
             </ul>
           </div>
 
           <div className="mb-8">
-            <h4 className="text-xl font-semibold mb-4 border-b border-gray-200 dark:border-gray-700 pb-2">
-              Project Experience
-            </h4>
-            <ul className="space-y-4">
-              <li>
-                <h5 className="font-medium text-gray-800 dark:text-gray-200">
-                  IoT-Based Weather Monitoring & Alert System
-                </h5>
-                <p className="text-gray-600 dark:text-gray-400 text-sm">
-                  Developed a weather monitoring system using ESP8266, DHT11, BMP180, and other sensors. Integrated real-time alerts via Blynk app with data visualization and analytics. Scored 364/400 (SGPA: 9.36).
-                </p>
-              </li>
-              <li>
-                <h5 className="font-medium text-gray-800 dark:text-gray-200">
-                  Advocate Management System (Web Application)
-                </h5>
-                <p className="text-gray-600 dark:text-gray-400 text-sm">
-                  Created a multi-user web system with appointment scheduling for advocates and clients. Scored 296/300 in the academic project.
-                </p>
-              </li>
-            </ul>
-          </div>
-
-          <div className="mb-8">
-            <h4 className="text-xl font-semibold mb-4 border-b border-gray-200 dark:border-gray-700 pb-2">
-              Publication
-            </h4>
-            <p className="text-gray-600 dark:text-gray-300 text-sm">
-              "Weather Monitoring System Using IoT" – Published in IRJMETS. 
-              <br />
+            <h4 className="text-xl font-semibold mb-4 border-b border-gray-200 dark:border-gray-700 pb-2">Publication</h4>
+            <p className="text-sm text-gray-600 dark:text-gray-300">
+              “Weather Monitoring System Using IoT” published in IRJMETS.<br />
               <a
-                className="text-blue-500 underline"
                 href="https://www.irjmets.com/paperdetail.php?paperId=6edd51683119cca0d3b6e8005e7d3c9c&title=WEATHER%2BMONITORING%2BSYSTEM%2BUSING%2BIOT"
                 target="_blank"
                 rel="noreferrer"
+                className="text-blue-500 underline"
               >
                 View Publication
               </a>
@@ -703,7 +707,7 @@ return (
 
           <div className="flex justify-center mt-8">
             <a
-              href="/RITESH CHAKRAMANI.pdf"
+              href="/Ritesh Chakramani.pdf"
               download
               className="flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-medium hover:opacity-90 transition shadow-lg"
             >
@@ -716,6 +720,7 @@ return (
     </div>
   </motion.div>
 </section>
+
 
         {/* Contact Section */}
 <section id="contact" className="py-20 px-6 ">
