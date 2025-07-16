@@ -12,7 +12,7 @@ import Certifications from "./sections/Certifications";
 import Resume from "./sections/Resume";
 import Contact from "./sections/Contact";
 import Footer from "./sections/Footer";
-import './index.css';
+import './index.css'; // if in the same folder (like src/)
 
 function App() {
   const [showIntro, setShowIntro] = useState(true);
