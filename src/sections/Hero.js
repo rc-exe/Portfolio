@@ -1,213 +1,82 @@
-import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
-import { initSmoothScroll } from "./utils/SmoothScroll";
-import background from "./assets/background.jpg";
-import Sidebar from "./components/Sidebar";
-import Intro from "./components/Intro";
-import Hero from "./sections/Hero";
-import About from "./sections/About";
-import Skills from "./sections/Skills";
-import Projects from "./sections/Projects";
-import Certifications from "./sections/Certifications";
-import Resume from "./sections/Resume";
-import Contact from "./sections/Contact";
-import Footer from "./sections/Footer";
-import './index.css'; // if in the same folder (like src/)
+import React from 'react';
+import { motion } from 'framer-motion';
+import WeatherWidget from '../components/WeatherWidget';
+import ScrollIndicator from '../components/ScrollIndicator';
+import Time from '../components/Time';
 
-function App() {
-  const [showIntro, setShowIntro] = useState(true);
-  const [showTip, setShowTip] = useState(false);
-  const [currentTip, setCurrentTip] = useState('');
-  const [tipsEnabled, setTipsEnabled] = useState(true);
-
-  const developerTips = [
-    "💡 Master both frontend & backend fundamentals before using frameworks.",
-    "🛠️ Learn how to debug effectively – dev tools are powerful allies.",
-    "🔗 Understand RESTful API design and how to consume APIs.",
-    "🔐 Always validate and sanitize input on both client and server sides.",
-    "🗃️ Learn indexing and query optimization for databases.",
-    "🚀 Keep dependencies up to date, but test before deploying.",
-    "📝 Implement consistent error logging in both front and back ends.",
-    "🐳 Learn Docker & basic DevOps for smoother deployments.",
-    "✅ Write tests – unit, integration, and E2E tests are lifesavers.",
-    "🔒 Learn web security best practices (XSS, CSRF, SQL Injection).",
-    "🧪 Use browser dev tools like a pro for layout and performance issues.",
-    "📚 Write good documentation – your future self will thank you.",
-    "⏱️ Automate common tasks to speed up your dev workflow.",
-    "📈 Profile and optimize code for performance bottlenecks.",
-    "🌱 Stay curious – the tech world evolves fast."
-  ];
-
-  useEffect(() => {
-    initSmoothScroll();
-  }, []);
-
-useEffect(() => {
-  if (showIntro || !tipsEnabled) return;
-
-  const tipInterval = setInterval(() => {
-    const randomTip = developerTips[Math.floor(Math.random() * developerTips.length)];
-    setCurrentTip(randomTip);
-    setShowTip(true);
-    setTimeout(() => setShowTip(false), 5000);
-  }, 10000);
-
-  return () => clearInterval(tipInterval);
-
-// eslint-disable-next-line react-hooks/exhaustive-deps
-}, [showIntro, tipsEnabled]);
-
-
-  const { scrollY } = useScroll();
-  const backgroundY = useTransform(scrollY, [0, 500], [0, -200]);
-  const opacity = useTransform(scrollY, [0, 100], [1, 0.7]);
-
-  const root = document.documentElement;
-  root.classList.add("theme-transition");
-
-  const skills = [
-    { name: "React.js", level: 70 },
-    { name: "Python", level: 85 },
-    { name: "Flask", level: 60 },
-    { name: "Machine Learning", level: 75 },
-    { name: "Java", level: 85 },
-    { name: "MySQL", level: 90 },
-    { name: "JavaScript", level: 85 },
-    { name: "Tailwind CSS", level: 75 },
-    { name: "HTML/CSS", level: 95 },
-  ];
-
-  const projects = [
-    {
-      name: "Resume Scanner",
-      link: "https://resume-ats-scorer.netlify.app/",
-      description: "ATS-compatible resume parser with scoring system that analyzes and ranks resumes based on job descriptions",
-      tags: ["Python", "NLP", "Flask"]
-    },
-    {
-      name: "Online Code Editor",
-      link: "https://online-code-editor-a9zz.onrender.com/",
-      description: "Real-time collaborative code editor with syntax highlighting and live preview functionality",
-      tags: ["React", "Node.js", "WebSockets"]
-    },
-    {
-      name: "PDF Parser",
-      link: "https://pdf-parser-b6e4.onrender.com/",
-      description: "Tool to extract and analyze text from PDF documents with search functionality",
-      tags: ["Python", "PyPDF2", "NLTK"]
-    },
-    {
-      name: "Keylogger",
-      link: "https://github.com/rc-exe/keylogger_rc",
-      description: "Advanced system monitoring tool with encryption and remote reporting capabilities",
-      tags: ["Python", "Security", "Encryption"]
-    },
-    {
-      name: "Face Emotion Recognition",
-      link: "https://github.com/rc-exe/face_recognition",
-      description: "AI-powered emotion detection system using computer vision and deep learning",
-      tags: ["Python", "OpenCV", "TensorFlow"]
-    },
-    {
-      name: "Speech To Text",
-      link: "https://github.com/rc-exe/Speech-To-Text",
-      description: "Real-time speech recognition system with 95% accuracy using deep learning",
-      tags: ["Python", "TensorFlow", "NLP"]
-    }
-  ];
-
-  const certifications = [
-    {
-      name: "AWS Certified Cloud Practitioner",
-      issuer: "Amazon Web Services",
-      date: "2025",
-      link: "https://www.credly.com/badges/aws-certified-cloud-practitioner",
-      badge: "/badges/aws.png"
-    },
-    {
-      name: "Python Programming Certification",
-      issuer: "Simplilearn",
-      date: "2025",
-      link: "https://www.simplilearn.com/certificates/verify/",
-      badge: "/badges/python.png"
-    },
-    {
-      name: "ReactJS Certification",
-      issuer: "Simplilearn",
-      date: "2025",
-      link: "https://www.simplilearn.com/certificates/verify/",
-      badge: "/badges/react.png"
-    }
-  ];
-
+const Hero = () => {
   return (
-    <>
-      {showIntro ? (
-        <Intro onComplete={() => setShowIntro(false)} />
-      ) : (
-        <div className="relative min-h-screen bg-stone-50 dark:bg-gray-950 text-gray-800 dark:text-stone-200 overflow-x-hidden">
-          <motion.div
-            className="absolute top-0 left-0 w-full h-full bg-cover bg-center -z-10 pointer-events-none"
-            style={{
-              backgroundImage: `url(${background})`,
-              backgroundSize: "cover",
-              backgroundAttachment: "fixed",
-              y: backgroundY,
-              opacity
-            }}
-          />
+    <section id="hero" className="min-h-screen flex flex-col justify-center items-center text-center px-4 sm:px-6 relative overflow-hidden">
+      {/* Background blobs - smaller and less prominent on mobile */}
+      <div className="absolute top-1/4 left-1/4 w-32 h-32 sm:w-64 sm:h-64 bg-purple-600 rounded-full filter blur-xl sm:blur-3xl opacity-20 animate-float"></div>
+      <div className="absolute bottom-1/3 right-1/4 w-40 h-40 sm:w-72 sm:h-72 bg-blue-600 rounded-full filter blur-xl sm:blur-3xl opacity-20 animate-float-delay"></div>
 
-          {/* 🧠 Developer Tip Notification */}
-          <AnimatePresence>
-            {showTip && (
-              <motion.div
-                key={currentTip}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 20 }}
-                transition={{ duration: 0.5 }}
-                className="fixed bottom-4 right-4 max-w-xs p-4 bg-blue-700 text-white dark:bg-white dark:text-black rounded-lg shadow-lg z-50"
-              >
-                <div className="text-sm pr-5">{currentTip}</div>
+      {/* Weather and Time widgets - repositioned for mobile */}
 
-                <div className="mt-2 flex items-center space-x-2">
-                  <input
-                    type="radio"
-                    id="disableTips"
-                    name="tips"
-                    onChange={() => setTipsEnabled(false)}
-                    className="text-blue-500 accent-blue-500"
-                  />
-                  <label htmlFor="disableTips" className="text-xs">Don't show tips again</label>
-                </div>
+      <WeatherWidget />
+      <Time />
 
-                <button
-                  onClick={() => setShowTip(false)}
-                  className="absolute top-1 right-2 text-white dark:text-black hover:opacity-60 text-lg font-bold"
-                >
-                  ×
-                </button>
-              </motion.div>
-            )}
-          </AnimatePresence>
-
-          <div className="flex justify-center">
-            <Sidebar />
-            <main className="w-full max-w-6xl mx-auto px-4">
-              <Hero />
-              <About />
-              <Skills skills={skills} />
-              <Projects projects={projects} />
-              <Certifications certifications={certifications} />
-              <Resume />
-              <Contact />
-              <Footer />
-            </main>
-          </div>
-        </div>
-      )}
-    </>
+      <motion.div
+        className="max-w-4xl relative z-10 mt-16 sm:mt-0"
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+        <motion.div 
+          className="text-base sm:text-lg md:text-xl mb-3 sm:mb-4 font-mono text-blue-500 dark:text-blue-400"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.2, duration: 0.5 }}
+        >
+          <span className="animate-wave inline-block origin-bottom"></span> Hey there! I'm
+        </motion.div>
+        
+        <motion.h1
+          className="text-4xl sm:text-5xl md:text-7xl font-bold mb-4 sm:mb-6"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.8, ease: "backOut" }}
+        >
+          <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+            Ritesh Chakramani
+          </span>
+        </motion.h1>
+        
+        <motion.p
+          className="text-base sm:text-lg md:text-2xl lg:text-3xl mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5, duration: 0.8 }}
+        >
+          Building <span className="font-semibold text-blue-600 dark:text-blue-400">digital experiences</span> that 
+          <span className="relative mx-1 sm:mx-2">
+            <span className="relative z-10">matter</span>
+            <span className="absolute bottom-0 left-0 w-full h-1 sm:h-2 bg-purple-400/30 -rotate-1"></span>
+          </span>
+          with modern tech
+        </motion.p>
+        
+        <motion.div
+          className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.7, duration: 0.8 }}
+        >
+          <a
+            href="#projects"
+            className="flex justify-center items-center gap-2 mx-auto shadow-lg sm:shadow-xl text-sm sm:text-lg bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-gray-100 backdrop-blur-md font-medium sm:font-semibold isolation-auto border-gray-50 dark:border-gray-700 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-emerald-500 hover:text-white dark:hover:text-gray-900 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-4 py-2 sm:px-6 sm:py-3 overflow-hidden border-2 rounded-full group"
+          >
+            Explore My Work
+            <svg className="w-4 h-4 sm:w-6 sm:h-6 group-hover:rotate-180 group-hover:bg-gray-50 dark:group-hover:bg-gray-100 text-gray-800 dark:text-gray-200 ease-linear duration-300 rounded-full border border-gray-700 group-hover:border-none p-0.5 sm:p-1 rotate-45" viewBox="0 0 16 19" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7 18C7 18.5523 7.44772 19 8 19C8.55228 19 9 18.5523 9 18H7ZM8.70711 0.292893C8.31658 -0.0976311 7.68342 -0.0976311 7.29289 0.292893L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292893ZM9 18L9 1H7L7 18H9Z" className="fill-gray-800 dark:fill-gray-100 group-hover:fill-gray-800 dark:group-hover:fill-gray-900"></path>
+            </svg>
+          </a>
+        </motion.div>
+        
+        <ScrollIndicator />
+      </motion.div>
+    </section>
   );
-}
+};
 
-export default App;
+export default Hero;
