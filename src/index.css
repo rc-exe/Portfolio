@@ -442,3 +442,23 @@ canvas {
 .btn-12:hover:before {
   --progress: 0;
 }
+section {
+  margin: 0 !important;
+  padding-top: 1.5rem !important;  /* ~24px top padding */
+  padding-bottom: 1.5rem !important;  /* ~24px bottom padding */
+}
+.parallax {
+  overflow: hidden;
+  white-space: nowrap;
+  user-select: none;
+  font-weight: 700;
+  font-size: 2.25rem; /* roughly h2 size */
+  margin-bottom: 2rem;
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.scroller span {
+  display: inline-block;
+  margin-right: 3rem;
+}
