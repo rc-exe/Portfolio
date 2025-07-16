@@ -12,10 +12,9 @@ const Hero = () => {
       <div className="absolute bottom-1/3 right-1/4 w-40 h-40 sm:w-72 sm:h-72 bg-blue-600 rounded-full filter blur-xl sm:blur-3xl opacity-20 animate-float-delay"></div>
 
       {/* Weather and Time widgets - repositioned for mobile */}
-      <div className="flex flex-col sm:flex-row items-center gap-4 absolute top-4 right-4 sm:top-6 sm:right-6 z-20">
-        <WeatherWidget />
-        <Time />
-      </div>
+
+      <WeatherWidget />
+      <Time />
 
       <motion.div
         className="max-w-4xl relative z-10 mt-16 sm:mt-0"
