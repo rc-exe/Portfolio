@@ -88,20 +88,47 @@ const Resume = () => {
               <div className="mb-3">
                 <h4 className="font-semibold mb-1 border-b border-gray-200 dark:border-gray-700 pb-0.5">Education</h4>
                 <ul className="space-y-1 text-sm">
-                  <li><strong>MCA</strong> – Rani Channamma University, Belagavi (2023–2024) – CGPA: 7.63 | SGPA: 9.5</li>
+                  <li><strong>MCA</strong> – Rani Channamma University, Belagavi (2023–2024) – CGPA: 7.63 | SGPA: 9.5 (IOT Project)</li>
                   <li><strong>BCA</strong> – CES Chetana BCA College, Vijayapura (2019–2022) – 74%</li>
                 </ul>
               </div>
 
-              <div className="mb-3">
-                <h4 className="font-semibold mb-1 border-b border-gray-200 dark:border-gray-700 pb-0.5">Project Experience</h4>
-                <ul className="space-y-1 text-gray-700 dark:text-gray-300">
-                  <li><strong>Keylogger & Security Monitoring Tool</strong><br />Built with Python, Flask, HTML/CSS, JS. Captures keystrokes, screenshots, web usage. Stealth mode design.</li>
-                  <li><strong>AI-Powered Speech-to-Text Web App</strong><br />Uses OpenAI Whisper + Flask. Live transcription, dark/light UI, and voice activity detection.</li>
-                  <li><strong>IoT Weather Monitoring System</strong><br />ESP8266 + sensors + Blynk. Real-time alerts, analytics, 364/400 marks (SGPA 9.36).</li>
-                  <li><strong>Advocate Management System</strong><br />Appointment system for clients/lawyers. Earned 296/300 in academic evaluation.</li>
-                </ul>
-              </div>
+            <div className="mb-3">
+  <h4 className="font-semibold mb-2 border-b border-gray-200 dark:border-gray-700 pb-0.5">Project Experience</h4>
+
+  <h5 className="font-semibold mt-3 mb-2 px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded">Freelancing Projects</h5>
+  <ul className="space-y-1 text-gray-700 dark:text-gray-300 mb-3">
+    <li>
+      <strong>Keylogger & Security Monitoring Tool</strong><br />
+      Built with Python, captures keystrokes, screenshots, and web usage. Designed in stealth mode for security monitoring.
+    </li>
+    <li>
+      <strong>Education Website</strong><br />
+      Developed using React. Responsive design with dynamic course content and user interaction features.
+    </li>
+    <li>
+      <strong>Resume Parser</strong><br />
+      React-based app that extracts and analyzes resume content, categorizes sections, and provides ATS-friendly suggestions.
+    </li>
+  </ul>
+
+  <h5 className="font-semibold mt-3 mb-2 px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded">Academic Projects</h5>
+  <ul className="space-y-1 text-gray-700 dark:text-gray-300">
+    <li>
+      <strong>IoT Weather Monitoring System</strong><br />
+      Built using ESP8266, sensors, and Blynk platform. Features real-time alerts and analytics. Completed during MCA with SGPA 9.36.
+    </li>
+    <li>
+      <strong>Advocate Management System</strong><br />
+      Appointment and case management system for clients and lawyers. Completed during BCA with high academic evaluation (296/300).
+    </li>
+    <li>
+      <strong>Emotion Visualizer Music System</strong><br />
+      Python-based system that detects emotions and generates music/visual feedback accordingly.
+    </li>
+  </ul>
+</div>
+
 
               <div className="mb-3">
                 <h4 className="font-semibold mb-1 border-b border-gray-200 dark:border-gray-700 pb-0.5">Publication</h4>
