@@ -1,18 +1,73 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import WeatherWidget from '../components/WeatherWidget';
 import ScrollIndicator from '../components/ScrollIndicator';
 import Time from '../components/Time';
 
 const Hero = () => {
+
+  const [showPopup, setShowPopup] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setShowPopup(true);
+    }, 1200); // slight delay for smoother UX
+  }, []);
+
+  const closePopup = () => {
+    setShowPopup(false);
+  };
+
   return (
     <section id="hero" className="min-h-screen flex flex-col justify-center items-center text-center px-4 sm:px-6 relative overflow-hidden">
+
       {/* Background blobs - smaller and less prominent on mobile */}
       <div className="absolute top-1/4 left-1/4 w-32 h-32 sm:w-64 sm:h-64 bg-purple-600 rounded-full filter blur-xl sm:blur-3xl opacity-20 animate-float"></div>
       <div className="absolute bottom-1/3 right-1/4 w-40 h-40 sm:w-72 sm:h-72 bg-blue-600 rounded-full filter blur-xl sm:blur-3xl opacity-20 animate-float-delay"></div>
 
-      {/* Weather and Time widgets - repositioned for mobile */}
 
+      {/* ================= POPUP ================= */}
+
+      {showPopup && (
+        <motion.div
+          initial={{ opacity: 0, scale: 0.85 }}
+          animate={{ opacity: 1, scale: 1 }}
+          className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50"
+        >
+          <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-2xl p-6 sm:p-8 text-center max-w-sm w-[90%] relative">
+
+            <button
+              onClick={closePopup}
+              className="absolute top-3 right-3 text-gray-500 hover:text-red-500 text-xl"
+            >
+              ✕
+            </button>
+
+            <h2 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white">
+              🚀 New Project Live
+            </h2>
+
+            <p className="text-gray-600 dark:text-gray-300 mb-5">
+              Check out my BarterHuB platform.
+            </p>
+
+            <a
+              href="https://barterhu.netlify.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-gradient-to-r from-blue-500 to-purple-500 text-white px-6 py-3 rounded-full font-semibold hover:scale-105 transition-transform"
+            >
+              Visit Project
+            </a>
+
+          </div>
+        </motion.div>
+      )}
+
+      {/* ========================================= */}
+
+
+      {/* Weather and Time widgets */}
       <WeatherWidget />
       <Time />
 
@@ -22,6 +77,7 @@ const Hero = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
+
         <motion.div 
           className="text-base sm:text-lg md:text-xl mb-3 sm:mb-4 font-mono text-blue-500 dark:text-blue-400"
           initial={{ opacity: 0 }}
@@ -74,7 +130,9 @@ const Hero = () => {
         </motion.div>
         
         <ScrollIndicator />
+
       </motion.div>
+
     </section>
   );
 };
