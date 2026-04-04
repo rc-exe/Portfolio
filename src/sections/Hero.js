@@ -48,17 +48,21 @@ const Hero = () => {
             </h2>
 
             <p className="text-gray-600 dark:text-gray-300 mb-5">
-              Check out my BarterHuB platform.
-            </p>
+  Check out my BarterHuB platform.
+</p>
 
-            <a
-              href="https://barterhu.netlify.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-gradient-to-r from-blue-500 to-purple-500 text-white px-6 py-3 rounded-full font-semibold hover:scale-105 transition-transform"
-            >
-              Visit Project
-            </a>
+<p className="text-red-500 text-sm font-semibold mb-3">
+  The site may be in maintenance mode when updates are undergoing.
+</p>
+
+<a
+  href="https://barterhu.netlify.app/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-block bg-gradient-to-r from-blue-500 to-purple-500 text-white px-6 py-3 rounded-full font-semibold hover:scale-105 transition-transform"
+>
+  Visit Project
+</a>
 
           </div>
         </motion.div>
