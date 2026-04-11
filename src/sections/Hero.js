@@ -52,7 +52,7 @@ const Hero = () => {
 </p>
 
 <p className="text-red-500 text-sm font-semibold mb-3">
-  The site may be in maintenance mode when updates are undergoing.
+  Some site pages may not load properly when updates are undergoing.
 </p>
 
 <a
